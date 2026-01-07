@@ -1,15 +1,19 @@
 # include "PhoneBook.hpp"
 
-
-
-
 int main()
 {
-    PhoneBook test;
-    int i = 0;
-    while (i < 10)
+    PhoneBook phonebook;
+    std::string commande;
+    while (1)
     {
-        test.add_contact();
-        i++;
+        std::cout << "give me commande :";
+        if (!std::getline(std::cin, commande))
+            break ;
+        if (commande == "ADD")
+            phonebook.add_contact();
+        else if (commande == "SEARCH")
+            phonebook.search_contact();
+        else if (commande == "EXIT")
+            break;
     }
 }
