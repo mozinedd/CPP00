@@ -13,8 +13,9 @@ NAME = phonebook
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) 
-%.o: %.c
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp $(HEDEAR)
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
 clean:

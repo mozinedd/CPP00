@@ -2,18 +2,19 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =  main.cpp newZombie.cpp randomChump.cpp Zombie.cpp 
+SRCS =  main.cpp Weapon.cpp HumanA.cpp HumanB.cpp 
 	
 OBJS = $(SRCS:.cpp=.o)
 
-HEDEAR = Zombie.hpp
+HEDEAR = HumanA.hpp  HumanB.hpp Weapon.hpp
 
-NAME = zombie
+NAME = weapon
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) 
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
 %.o: %.cpp $(HEDEAR)
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 

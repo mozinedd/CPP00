@@ -16,3 +16,7 @@ Zombie::~Zombie()
 {
     std::cout << this->name << ": Destructor RUN" << std::endl;
 }
+void Zombie::setname(std::string name)
+{
+    this->name = name;
+}
